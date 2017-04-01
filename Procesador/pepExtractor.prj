@@ -1,0 +1,7 @@
+work	"ALU.vhd"
+work	"Adder.vhd"
+work	"ControlUnit.vhd"
+work	"InstructionMemory.vhd"
+work	"Procesador.vhd"
+work	"ProgramCounter.vhd"
+work	"RegisterFile.vhd"

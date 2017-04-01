@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "E:/Trabajos UTP/Arquitectura/firstprocessor-YesicaCifuentes24/Procesador/ALU_TB_isim_beh.exe" -prj "E:/Trabajos UTP/Arquitectura/firstprocessor-YesicaCifuentes24/Procesador/ALU_TB_beh.prj" "work.ALU_TB" 
