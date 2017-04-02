@@ -8,17 +8,21 @@ entity ProgramCounter is
            DataOut : out  STD_LOGIC_VECTOR (31 downto 0));
 end ProgramCounter;
 
-architecture Behavioral of ProgramCounter is
+architecture arq_ProgramCounter of ProgramCounter is
+
+signal DataValue : std_logic_vector(31 downto 0) := x"00000000";
 
 begin
 
 process(CLK, rst) begin 
 	if(rst = '1') then 
-		DataOut <= (others => '0');
+		DataValue <= (others => '0');
 	elsif(rising_edge(CLK)) then
-		DataOut <= Data;
+		DataValue <= Data;
 	end if;
 
 end process;
 
-end Behavioral;
+DataOut <= DataValue;
+
+end arq_ProgramCounter;

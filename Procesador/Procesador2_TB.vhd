@@ -1,21 +1,20 @@
+
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
-
  
-ENTITY Procesador_TB IS
-END Procesador_TB;
+ENTITY Procesador2_TB IS
+END Procesador2_TB;
  
-ARCHITECTURE behavior OF Procesador_TB IS 
+ARCHITECTURE behavior OF Procesador2_TB IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT Procesador
+    COMPONENT Procesador2
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
-         AluResult : OUT  std_logic_vector(31 downto 0);
-         programStateValue : OUT  std_logic_vector(31 downto 0)
+         AluResult : OUT  std_logic_vector(31 downto 0)
         );
     END COMPONENT;
     
@@ -26,7 +25,6 @@ ARCHITECTURE behavior OF Procesador_TB IS
 
  	--Outputs
    signal AluResult : std_logic_vector(31 downto 0);
-   signal programStateValue : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
@@ -34,11 +32,10 @@ ARCHITECTURE behavior OF Procesador_TB IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: Procesador PORT MAP (
+   uut: Procesador2 PORT MAP (
           clk => clk,
           reset => reset,
-          AluResult => AluResult,
-          programStateValue => programStateValue
+          AluResult => AluResult
         );
 
    -- Clock process definitions
@@ -53,11 +50,10 @@ BEGIN
 
    -- Stimulus process
    stim_proc: process
-   begin
-		reset <='1';
-		wait for 5 ns;	
-		reset <='0';
+   begin		
       -- hold reset state for 100 ns.
+      wait for 100 ns;	
+
       
 
       -- insert stimulus here 

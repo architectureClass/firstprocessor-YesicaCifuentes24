@@ -1,17 +1,16 @@
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 
 
-entity Procesador is
+
+entity Procesador2 is
     Port ( clk : in  STD_LOGIC;
            reset : in  STD_LOGIC;
-           AluResult : out  STD_LOGIC_VECTOR (31 downto 0);
-			  programStateValue : out  STD_LOGIC_VECTOR (31 downto 0)
-			  );
-end Procesador;
+           AluResult : out  STD_LOGIC_VECTOR (31 downto 0));
+end Procesador2;
 
-architecture arq_Procesador of Procesador is
-
+architecture Arq_Procesador2 of Procesador2 is
 component ProgramCounter
     Port ( Data : in  STD_LOGIC_VECTOR (31 downto 0);
            rst : in  STD_LOGIC;
@@ -55,6 +54,18 @@ component ALU
            ALUResult : out  STD_LOGIC_VECTOR (31 downto 0));
 end component;
 
+component SEU
+	Port ( Imm13 : in  STD_LOGIC_VECTOR (12 downto 0);
+           ImmOut32 : out  STD_LOGIC_VECTOR (31 downto 0));
+end component;
+
+component MUX
+Port ( CRs2 : in  STD_LOGIC_VECTOR (31 downto 0);
+           Imm32 : in  STD_LOGIC_VECTOR (31 downto 0);
+           Operando : out  STD_LOGIC_VECTOR (31 downto 0);
+           Isc : in  STD_LOGIC);
+end component;
+
 signal ProgramState : std_logic_vector(31 downto 0) := (others => '0');
 signal ProgramPosition : std_logic_vector(31 downto 0) := (others => '0');
 signal NextProgramState : std_logic_vector(31 downto 0) := (others => '0');
@@ -63,6 +74,9 @@ signal AluSalida : std_logic_vector(31 downto 0) := (others => '0');
 signal Crs1RF : std_logic_vector(31 downto 0) := (others => '0');
 signal Crs2RF : std_logic_vector(31 downto 0) := (others => '0');
 signal Operation : std_logic_vector(5 downto 0) := (others => '0');
+signal Salida32 : std_logic_vector (31 downto 0) := (others => '0');
+signal MuxOut : std_logic_vector (31 downto 0) := (others => '0');
+
 
 begin
 	
@@ -110,7 +124,21 @@ RF0 : RF
 		crs1 => Crs1RF,
 		crs2 => Crs2RF
 	);
+	
+SEU0 : SEU
+	port map (
+		Imm13 => Instructions (12 downto 0),
+      ImmOut32 => Salida32
+	);
 
+MUX0 : MUX
+	 port map (
+		CRs2 => Crs2RF,
+      Imm32 => Salida32,
+      Operando => MuxOut,
+      Isc => Instructions (13)
+	);
+		
 ControlUnit0 : ControlUnit
 	Port map(
 		op => Instructions(31 downto 30),
@@ -121,12 +149,13 @@ ControlUnit0 : ControlUnit
 ALU0 : ALU 
 	Port map(
 		CRs1 => Crs1RF,
-		CRs2 => Crs2RF,
+		CRs2 => MuxOut,
 		ALUOp => Operation,
 		ALUResult => AluSalida
 	);
 
 AluResult <= AluSalida;
-programStateValue <= ProgramPosition;
-end arq_Procesador;
+
+
+end Arq_Procesador2;
 

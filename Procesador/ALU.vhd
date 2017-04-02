@@ -8,11 +8,11 @@ entity ALU is
     Port ( CRs1 : in  STD_LOGIC_VECTOR (31 downto 0);
            CRs2 : in  STD_LOGIC_VECTOR (31 downto 0);
            ALUOp : in  STD_LOGIC_VECTOR (5 downto 0);
-           ALUResult : out  STD_LOGIC_VECTOR (31 downto 0));
+           AluResult : out  STD_LOGIC_VECTOR (31 downto 0));
 end ALU;
 
 architecture arq_ALU of ALU is
-signal i : std_logic := '0';
+--signal i : std_logic := '0';
 signal result : std_logic_vector (31 downto 0) := x"00000000";
 begin
 	process(CRs1, CRs2, ALUOP) begin
@@ -37,10 +37,10 @@ begin
 				
 				result <= CRs1 or not (CRs2);
 			
-			when others => result <= x"00000000";
+			when others => 
+			result <= x"00000000";
 		end case;
 	end process;
-ALUResult <=result;
-
+	AluResult <= result;
 end arq_ALU;
 

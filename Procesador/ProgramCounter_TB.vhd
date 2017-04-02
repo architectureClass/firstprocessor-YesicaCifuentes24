@@ -27,7 +27,7 @@ ARCHITECTURE behavior OF ProgramCounter_TB IS
    signal DataOut : std_logic_vector(31 downto 0);
 
    -- Clock period definitions
-   constant CLK_period : time := 20 ns;
+   constant CLK_period : time := 10 ns;
  
 BEGIN
  
@@ -53,10 +53,25 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-      Data <= "01000000000000000000000000110111";
-      wait for 100 ns;
+      Data <= x"00000000";
+      wait for 5 ns;
+		
+		Data <= x"00000001";
+      wait for 10 ns;
+		
+		Data <= x"00000002";
+      wait for 10 ns;
+		
+		Data <= x"00000003";
+      wait for 10 ns;
+		
+		Data <= x"00000004";
+      wait for 3 ns;
+		
+		
 		rst <= '1';
-      wait for CLK_period*10;
+      wait for 6 ns;
+		Data <= x"00000001";
 		rst <= '0';
       -- insert stimulus here 
 

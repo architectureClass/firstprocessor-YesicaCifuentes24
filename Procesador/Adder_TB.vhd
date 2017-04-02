@@ -18,12 +18,14 @@ ARCHITECTURE behavior OF Adder_TB IS
    --Inputs
    signal Op1 : std_logic_vector(31 downto 0) := (others => '0');
    signal Op2 : std_logic_vector(31 downto 0) := (others => '0');
-
+	
  	--Outputs
    signal DataOut : std_logic_vector(31 downto 0);
    -- No clocks detected in port list. Replace <clock> below with 
    -- appropriate port name 
  
+--	signal dataResult : std_logic_vector(31 downto 0) :=x"00000000";
+	--shared variable resultado : std_logic_vector(31 downto 0) := x"00000000";
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
@@ -36,12 +38,15 @@ BEGIN
    -- Stimulus process
    stim_proc: process
    begin		
-		Op1 <= "01000000000000000000000000110111";
-		Op2 <= "00000000000000000000000000000001";
-      wait for 100 ns;	
-		Op2 <= "01000000000000000000000000110111";
-      wait for 100 ns;
-
+		Op1 <= x"00000001";
+		Op2 <= x"00000000";--0
+		
+      wait for 20 ns;	
+		Op2 <= x"00000001";
+		
+      wait for 20 ns;
+		Op2 <= x"00000002";
+      wait for 20 ns;
       -- insert stimulus here 
 
       wait;

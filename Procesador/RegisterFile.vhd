@@ -14,43 +14,31 @@ entity RF is
            crs2 : out  STD_LOGIC_VECTOR (31 downto 0));
 end RF;
 
-architecture Behavioral of RF is
+architecture arq_RF of RF is
 
 type reg is array (0 to 31) of std_logic_vector (31 downto 0);
  
- impure function InitRomFromFile (RomFileName : in string) return instructions is
+ impure function InitRomFromFile (RomFileName : in string) return reg is
 	FILE RomFile : text open read_mode is RomFileName;
 	variable RomFileLine : line;
 	variable temp_bv : bit_vector(31 downto 0);
-	variable temp_mem : instructions;
+	variable temp_mem : reg;
 	begin
-		for I in instructions'range loop
+		for I in reg'range loop
 			readline (RomFile, RomFileLine);
 			read(RomFileLine, temp_bv);
 			temp_mem(i) := to_stdlogicvector(temp_bv);
 		end loop;
 	return temp_mem;
 end function;
- 
- 
---signal myReg : reg :=(x"00000000", x"00000000", x"00000000", x"00000000",
---					 	 x"00000001", x"00000002", x"00000003", x"00000000",
---							 x"00000000", x"00000000", x"00000000", x"00000000",
---							 x"00000000", x"00000000", x"00000011", x"FFFFFFF7",
---							 x"0000000E", x"00000009", x"00000000", x"00000000",
---							 x"00000008", x"00000000", x"00000000", x"00000000",
---							 x"00000000", x"00000000", x"00000000", x"00000000",
---							 x"00000000", x"00000000", x"00000000", x"00000000");
 
-signal myReg : reg := (others => x"00000000");
+signal myReg : reg := InitRomFromFile("valores.txt");
 
 begin
 
 process(rs1,rs2,rd,dwr, reset)
-	begin 
-	
-		myReg(0) <= x"00000000";
-		
+	begin 	
+		myReg(0) <= x"00000000";--garantiza g0
 		if reset = '0' then
 			if(rd/="00000")then
 				Myreg(conv_integer(rd)) <= dwr; 
@@ -60,10 +48,7 @@ process(rs1,rs2,rd,dwr, reset)
 		else --inicializaciones
 			crs1 <= (others => '0');
 			crs2 <= (others => '0');
-	--		myReg(16) <= x"00000011";
-	--		myReg(17) <= x"FFFFFFF7";
-	--		myReg(18) <= x"0000000E";
 		end if;
 	end process;
 
-end Behavioral;
+end arq_RF;
