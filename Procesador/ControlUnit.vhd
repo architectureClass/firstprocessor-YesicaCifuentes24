@@ -22,8 +22,8 @@ architecture arq_ControlUnit of ControlUnit is
 --result <= "001000";--SUB
 
 
-signal op2 : std_logic_vector (2 downto 0) := "000";
-signal result : std_logic_vector (5 downto 0) := "000000";
+--signal op2 : std_logic_vector (2 downto 0) := "000";
+signal result : std_logic_vector (5 downto 0) := "111111";
 begin
 	process(op, op3) begin
 		case(op) is
@@ -68,7 +68,6 @@ begin
 			--when "11" =>
 			when others => result <= "111111";
 		end case;
-			
 	
 	
 	end process;

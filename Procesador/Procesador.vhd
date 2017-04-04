@@ -82,9 +82,7 @@ NextProgramCounter0 : ProgramCounter
 		DataOut => ProgramState
 	);
 
-process(clk) begin
-	
-end process;
+
 
 Adder0 : Adder
 	Port map(
