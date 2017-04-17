@@ -32,3 +32,5 @@ Procesador/pepExtractor.prj
 *.html
 *.ini
 Procesador/_xmsgs/pn_parser.xmsgs
+Procesador/isim/ALU_TB_isim_beh.exe.sim/tmp_save/_1
+*.xmsgs
