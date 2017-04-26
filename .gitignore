@@ -34,3 +34,11 @@ Procesador/pepExtractor.prj
 Procesador/_xmsgs/pn_parser.xmsgs
 Procesador/isim/ALU_TB_isim_beh.exe.sim/tmp_save/_1
 *.xmsgs
+*.lso
+*.syr
+*.xst
+ProcesadorCuatro/webtalk_pn.xml
+*.cmd_log
+ProcesadorCuatro/Procesador4_xst.xrpt
+*.vdbl
+ProcesadorCuatro/xst/work/work.vdbx

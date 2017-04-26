@@ -13,9 +13,6 @@ architecture arq_ControlUnit of ControlUnit is
 --result <= "000001";--OR
 --result <= "000010";--XOR
 --result <= "000011";--XNOR
-
-
-
 --result <= "000111";--ADD
 --result <= "001000";--SUB
 
@@ -27,17 +24,17 @@ architecture arq_ControlUnit of ControlUnit is
 --result <= "001110";--ORN
 --result <= "001111";--ADDxcc
 --result <= "010000";--SUBxcc
+--result <= "010001";--ANDcc
+--result <= "010010";--ORcc
+--result <= "010011";--ANDNcc
+--result <= "010100";--ORNcc
+--result <= "010101";--XORcc
+--result <= "010110";--XNORcc
+--result <= "010111";--sll
+--result <= "011000";--srl
 
---ADDxcc
---SUBxcc
---ANDcc
---ORcc
---ANDNcc
---ORNcc
---XORcc
---XNORcc
---sll
---srl
+
+
 
 
 --signal op2 : std_logic_vector (2 downto 0) := "000";
@@ -82,6 +79,26 @@ begin
 				if(op3="010000") then--ADDcc
 					result <= "001010";
 				end if;
+				if(op3="010001") then--ANDcc
+					result <= "010001";
+				end if;
+				if(op3="010010") then--ORcc
+					result <= "010010";
+				end if;
+				if(op3="010101") then--ANDNcc
+					result <= "010011";
+				end if;
+				if(op3="010110") then--ORNcc
+					result <= "010100";
+				end if;
+				if(op3="010011") then--XORcc
+					result <= "010101";
+				end if;
+				
+				if(op3="010111") then--XNORcc
+					result <= "010110";
+				end if;
+				
 				
 				--instrucciones con Carry
 				if(op3="001100") then--SUBX
@@ -99,6 +116,16 @@ begin
 				if(op3="011100") then--SUBxcc
 					result <= "010000";
 				end if;
+				
+				--instrucciones con
+				
+				if(op3="100101") then--sll
+					result <= "010111";
+				end if;
+				
+				if(op3="100110") then--slr
+					result <= "011000";
+				end if; 
 
 			--when "11" =>
 			when others => result <= "111111";
