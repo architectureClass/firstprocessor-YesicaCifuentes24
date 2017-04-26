@@ -22,21 +22,27 @@ begin
 				result <= CRs1 and CRs2;
 			when "000001" =>--OR
 				result <= CRs1 or CRs2;
-			when "000010" =>
+			when "000010" => --XOR
 				result <= CRs1 xor CRs2;
-			when "000011" =>
+			when "000011" =>--XNOR
 				result <= CRs1 xnor CRs2;
 				
-			when "000111" =>
+			when "000111" => --ADD
 				result <= CRs1 + CRs2;
 				
-			when "001000" =>
+			when "001000" =>--SUB
 				result <= CRs1-CRs2;
-			when "001101" =>
+			when "001101" => --ANDN
 				result <= CRs1 and not (CRs2);
-			when "001110" =>
-				
+			when "001110" => --ORN
 				result <= CRs1 or not (CRs2);
+			when "001001" => --SUBcc
+				result <= CRs1 -CRs2;
+			when "001010" => --ADDcc
+				result <= CRs1 + CRs2;
+			when "001010" => --
+				result <= CRs1 + CRs2;
+		
 			
 			when others => 
 			result <= x"00000000";
