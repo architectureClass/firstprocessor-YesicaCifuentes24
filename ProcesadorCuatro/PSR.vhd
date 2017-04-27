@@ -18,6 +18,10 @@ signal c_Aux : STD_LOGIC := '0';
 
 begin
 	process(clk, rst, nzvc) begin
+		if(rst='1') then
+			cwp_Aux<= "00000";
+			c_Aux <= '0';
+		end if;
 		if(rising_edge(clk)) then
 			cwp_Aux <= nCwp;
 			c_Aux <= nzvc(0);

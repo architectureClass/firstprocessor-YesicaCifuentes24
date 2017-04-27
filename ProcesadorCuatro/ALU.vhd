@@ -29,20 +29,52 @@ begin
 				
 			when "000111" => --ADD
 				result <= CRs1 + CRs2;
-				
 			when "001000" =>--SUB
 				result <= CRs1-CRs2;
-			when "001101" => --ANDN
-				result <= CRs1 and not (CRs2);
-			when "001110" => --ORN
-				result <= CRs1 or not (CRs2);
+			
+			
 			when "001001" => --SUBcc
 				result <= CRs1 -CRs2;
 			when "001010" => --ADDcc
 				result <= CRs1 + CRs2;
-			when "001010" => --
+			when "001011" => --SUBx
+				result <= CRs1 - CRs2 - C;
+			when "001100" => --ADDx
+				result <= CRs1 + CRs2 + C;
+			when "001101" => --ANDN
+				result <= CRs1 and not (CRs2);
+			when "001110" => --ORN
+				result <= CRs1 or not (CRs2);
+			when "001111" => --ADDxcc
+				result <= CRs1 + CRs2 + C;
+			when "010000" => --SUBxcc
+				result <= CRs1 - CRs2 - C;
+			when "010001" => --ANDcc
+				result <= CRs1 and CRs2;
+			when "010010" => --ORcc
+				result <= CRs1 or CRs2;
+			when "010011" => --ANDNcc
+				result <= CRs1 and not(CRs2);
+			when "010100" => --ORNcc
+				result <= CRs1 or not(CRs2);
+			when "010101" => --XORcc
+				result <= CRs1 xor CRs2;
+			when "010110" => --XNORcc
+				result <= CRs1 xnor CRs2;
+			when "010111" => --sll
+				result <= to_stdlogicvector(to_bitvector(CRs1) sll conv_integer(CRs2));
+			when "011000" => --srl
+				result <= to_stdlogicvector(to_bitvector(CRs1) sll conv_integer(CRs2));
+			
+			when "011001" => --save
 				result <= CRs1 + CRs2;
-		
+			
+			when "011010" => --restore
+				result <= CRs1 + CRs2;
+			
+			
+			
+			
 			
 			when others => 
 			result <= x"00000000";

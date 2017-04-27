@@ -42,3 +42,5 @@ ProcesadorCuatro/webtalk_pn.xml
 ProcesadorCuatro/Procesador4_xst.xrpt
 *.vdbl
 ProcesadorCuatro/xst/work/work.vdbx
+ProcesadorCuatro/isim/pn_info
+ProcesadorCuatro/isim/Procesador4_TB_isim_beh.exe.sim/tmp_save/_1

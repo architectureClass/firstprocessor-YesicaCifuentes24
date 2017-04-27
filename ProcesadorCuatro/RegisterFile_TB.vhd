@@ -9,9 +9,9 @@ ARCHITECTURE behavior OF RegisterFile_TB IS
  
     COMPONENT RF
     PORT(
-         rs1 : IN  std_logic_vector(4 downto 0);
-         rs2 : IN  std_logic_vector(4 downto 0);
-         rd : IN  std_logic_vector(4 downto 0);
+         rs1 : IN  std_logic_vector(5 downto 0);
+         rs2 : IN  std_logic_vector(5 downto 0);
+         rd : IN  std_logic_vector(5 downto 0);
          dwr : IN  std_logic_vector(31 downto 0);
          reset : IN  std_logic;
          crs1 : OUT  std_logic_vector(31 downto 0);
@@ -21,9 +21,9 @@ ARCHITECTURE behavior OF RegisterFile_TB IS
     
 
    --Inputs
-   signal rs1 : std_logic_vector(4 downto 0) := (others => '0');
-   signal rs2 : std_logic_vector(4 downto 0) := (others => '0');
-   signal rd : std_logic_vector(4 downto 0) := (others => '0');
+   signal rs1 : std_logic_vector(5 downto 0) := (others => '0');
+   signal rs2 : std_logic_vector(5 downto 0) := (others => '0');
+   signal rd : std_logic_vector(5 downto 0) := (others => '0');
    signal dwr : std_logic_vector(31 downto 0) := (others => '0');
    signal reset : std_logic := '0';
 
@@ -50,20 +50,20 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
-      rs1 <= "10000";
-		rs2 <= "10001";
-		rd  <= "10010";
+      rs1 <= "010000";
+		rs2 <= "010001";
+		rd  <= "010010";
 		dwr <= x"0000000F";
 		reset <= '0';
 		wait for 100 ns;
-		rs1 <= "10010";
-		rs2 <= "10001";
-		rd  <= "10011";
+		rs1 <= "010010";
+		rs2 <= "010001";
+		rd  <= "010011";
 		dwr <= x"000000F0";
 		wait for 100 ns;
-		rs1 <= "10011";
-		rs2 <= "10001";
-		rd  <= "10010";
+		rs1 <= "010011";
+		rs2 <= "010001";
+		rd  <= "010010";
 		dwr <= "01010000000001010000110011000110";
 		wait for 100 ns;
       -- insert stimulus here 

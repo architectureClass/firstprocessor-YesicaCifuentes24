@@ -2,15 +2,18 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.ALL;
  
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--USE ieee.numeric_std.ALL;
  
-ENTITY Procesador2_TB IS
-END Procesador2_TB;
+ENTITY Procesador4_TB IS
+END Procesador4_TB;
  
-ARCHITECTURE behavior OF Procesador2_TB IS 
+ARCHITECTURE behavior OF Procesador4_TB IS 
  
     -- Component Declaration for the Unit Under Test (UUT)
  
-    COMPONENT Procesador2
+    COMPONENT Procesador4
     PORT(
          clk : IN  std_logic;
          reset : IN  std_logic;
@@ -32,7 +35,7 @@ ARCHITECTURE behavior OF Procesador2_TB IS
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
-   uut: Procesador2 PORT MAP (
+   uut: Procesador4 PORT MAP (
           clk => clk,
           reset => reset,
           AluResult => AluResult
@@ -52,9 +55,9 @@ BEGIN
    stim_proc: process
    begin		
       -- hold reset state for 100 ns.
+		reset<='1';
       wait for 100 ns;	
-
-      
+		reset<='0';
 
       -- insert stimulus here 
 

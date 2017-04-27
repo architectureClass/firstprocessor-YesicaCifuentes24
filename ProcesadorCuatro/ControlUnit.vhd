@@ -32,8 +32,8 @@ architecture arq_ControlUnit of ControlUnit is
 --result <= "010110";--XNORcc
 --result <= "010111";--sll
 --result <= "011000";--srl
-
-
+--result <= "011001";--save
+--result <= "011010";--restore
 
 
 
@@ -126,7 +126,14 @@ begin
 				if(op3="100110") then--slr
 					result <= "011000";
 				end if; 
-
+			--- instrucciones save y restore
+			if(op3="111100") then--save
+					result <= "011001";
+				end if; 
+			if(op3="111101") then--restore
+					result <= "011010";
+				end if; 
+		
 			--when "11" =>
 			when others => result <= "111111";
 		end case;

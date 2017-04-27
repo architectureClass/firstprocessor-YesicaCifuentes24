@@ -34,7 +34,7 @@ begin
 				nzvc_Salida(1) <= '1';
 			end if;
 			
-			if((crS1(31)='1' and crS2(31)='1') or (AluResult='0' and (crS1(31)='1' or crS2(31)='1'))) then
+			if((crS1(31)='1' and crS2(31)='1') or (AluResult(31)='0' and (crS1(31)='1' or crS2(31)='1'))) then
 				nzvc_Salida(0) <= '1';
 			end if;
 			
@@ -52,7 +52,7 @@ begin
 				nzvc_Salida(1) <= '1';
 			end if;
 			
-			if((crS1(31)='0' and crS2(31)='1') or (AluResult='1' and (crS1(31)='0' or crS2(31)='1'))) then
+			if((crS1(31)='0' and crS2(31)='1') or (AluResult(31)='1' and (crS1(31)='0' or crS2(31)='1'))) then
 				nzvc_Salida(0) <= '1';
 			end if;
 			
@@ -70,7 +70,7 @@ begin
 			
 		
 	end process;
-
+	nzvc<=nzvc_Salida;
 
 end arq_PSRModifer;
 
