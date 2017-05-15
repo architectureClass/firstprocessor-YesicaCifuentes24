@@ -12,7 +12,7 @@ end InstructionMemory;
 
 architecture arq_InstructionMemory of InstructionMemory is
 
-type instructions is array (0 to 63) of std_logic_vector (31 downto 0);
+type instructions is array (0 to 100) of std_logic_vector (31 downto 0);
 
 impure function InitRomFromFile (RomFileName : in string) return instructions is
 		FILE RomFile : text open read_mode is RomFileName;

@@ -24,10 +24,12 @@ process(cRD,AluResult,Reset,WRENMEM) begin
 	if (Reset = '1') then
 		myReg <= (others => x"00000000");
 	else 
-		if (WRENMEM = '1') then
+		if (WRENMEM = '1' and 520>AluResult) then
 			myReg(conv_integer(AluResult)) <= cRD;
 		end if;
-		Aux_DataMem <= myReg(conv_integer(AluResult));
+		if(520>AluResult) then
+			Aux_DataMem <= myReg(conv_integer(AluResult));
+		end if;
 	end if;
 end process;
 

@@ -24,5 +24,5 @@ begin
 	end process;
 	ImmOut32 <= result;
 
-end arq_SEU;
+end Behavioral;
 
