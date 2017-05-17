@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="D:/compilar/firstprocessor-YesicaCifuentes24/ProcesadorSeis/ProcesadorSeis_TB_isim_beh.wdb" id="1" type="auto">
+         <top_modules>
+            <top_module name="numeric_std" />
+            <top_module name="procesadorseis_tb" />
+            <top_module name="std_logic_1164" />
+            <top_module name="std_logic_arith" />
+            <top_module name="std_logic_signed" />
+            <top_module name="std_logic_unsigned" />
+            <top_module name="textio" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <WVObjectSize size="32" />
+   <wvobject fp_name="/procesadorseis_tb/clk" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ProgramCounter0/dataout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dataout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dataout[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/call" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">call[31:0]</obj_property>
+      <obj_property name="ObjectShortName">call[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/branch" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">branch[31:0]</obj_property>
+      <obj_property name="ObjectShortName">branch[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">npc[31:0]</obj_property>
+      <obj_property name="ObjectShortName">npc[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/jump" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">jump[31:0]</obj_property>
+      <obj_property name="ObjectShortName">jump[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/pcsc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pcsc[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pcsc[1:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npcout" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">npcout[31:0]</obj_property>
+      <obj_property name="ObjectShortName">npcout[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npcout_aux" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">npcout_aux[31:0]</obj_property>
+      <obj_property name="ObjectShortName">npcout_aux[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/crs1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">crs1[31:0]</obj_property>
+      <obj_property name="ObjectShortName">crs1[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/crs2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">crs2[31:0]</obj_property>
+      <obj_property name="ObjectShortName">crs2[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/c" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">c</obj_property>
+      <obj_property name="ObjectShortName">c</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/aluop" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aluop[5:0]</obj_property>
+      <obj_property name="ObjectShortName">aluop[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/aluresult" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aluresult[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aluresult[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/op" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">op[1:0]</obj_property>
+      <obj_property name="ObjectShortName">op[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/op3" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">op3[5:0]</obj_property>
+      <obj_property name="ObjectShortName">op3[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/icc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">icc[3:0]</obj_property>
+      <obj_property name="ObjectShortName">icc[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/cond" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">cond[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cond[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/aluop" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aluop[5:0]</obj_property>
+      <obj_property name="ObjectShortName">aluop[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfdest" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rfdest</obj_property>
+      <obj_property name="ObjectShortName">rfdest</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfsc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rfsc[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rfsc[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wrenmem" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wrenmem</obj_property>
+      <obj_property name="ObjectShortName">wrenmem</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wre" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wre</obj_property>
+      <obj_property name="ObjectShortName">wre</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/pcsc" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pcsc[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pcsc[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/result" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">result[5:0]</obj_property>
+      <obj_property name="ObjectShortName">result[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wrenmem_aux" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wrenmem_aux</obj_property>
+      <obj_property name="ObjectShortName">wrenmem_aux</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wre_aux" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wre_aux</obj_property>
+      <obj_property name="ObjectShortName">wre_aux</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/pcsc_aux" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">pcsc_aux[1:0]</obj_property>
+      <obj_property name="ObjectShortName">pcsc_aux[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfdest_aux" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rfdest_aux</obj_property>
+      <obj_property name="ObjectShortName">rfdest_aux</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfsc_aux" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rfsc_aux[1:0]</obj_property>
+      <obj_property name="ObjectShortName">rfsc_aux[1:0]</obj_property>
+   </wvobject>
+</wave_config>

@@ -19,7 +19,7 @@ signal cwp_Aux : STD_LOGIC_VECTOR (4 downto 0) := "00000";
 signal c_Aux : STD_LOGIC := '0';
 
 begin
-	process(clk, rst, nzvc) begin
+	process(clk, rst, nzvc, ncwp) begin
 		if(rst='1') then
 			cwp_Aux<= "00000";
 			c_Aux <= '0';

@@ -1,5 +1,7 @@
-Library IEEE;
+library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.numeric_std.all;
+use IEEE.std_logic_unsigned.all;
 
 entity ProgramCounter is
     Port ( Data : in  STD_LOGIC_VECTOR (31 downto 0);
@@ -14,11 +16,13 @@ signal DataValue : std_logic_vector(31 downto 0) := x"00000000";
 
 begin
 
-process(CLK, rst) begin 
+process(CLK, rst, Data) begin 
 	if(rst = '1') then 
 		DataValue <= (others => '0');
 	elsif(rising_edge(CLK)) then
-		DataValue <= Data;
+		if(Data<85) then
+			DataValue <= Data;
+		end if;
 	end if;
 
 end process;

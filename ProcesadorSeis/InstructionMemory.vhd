@@ -12,7 +12,7 @@ end InstructionMemory;
 
 architecture arq_InstructionMemory of InstructionMemory is
 
-type instructions is array (0 to 100) of std_logic_vector (31 downto 0);
+type instructions is array (0 to 84) of std_logic_vector (31 downto 0);
 
 impure function InitRomFromFile (RomFileName : in string) return instructions is
 		FILE RomFile : text open read_mode is RomFileName;
@@ -29,13 +29,15 @@ impure function InitRomFromFile (RomFileName : in string) return instructions is
 end function;
 
 signal myInstructions : instructions := InitRomFromFile("dato.txt");
-
+signal Instruction_Aux : STD_LOGIC_VECTOR (31 downto 0) := x"00000000";
 begin
 	process(Address, rst) begin
 		if(rst='1') then
 			Instruction <=(others => '0');--x"00000000";
 		else
-			Instruction <=myInstructions(conv_integer(Address));
+			if(Address<85) then
+				Instruction <=myInstructions(conv_integer(Address));
+			end if;
 		end if;
 	end process;
 end arq_InstructionMemory;

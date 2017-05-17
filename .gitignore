@@ -46,3 +46,5 @@ ProcesadorCuatro/isim/pn_info
 ProcesadorCuatro/isim/Procesador4_TB_isim_beh.exe.sim/tmp_save/_1
 *.stx
 *.vdbx
+*.ref
+*.vho

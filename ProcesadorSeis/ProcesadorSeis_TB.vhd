@@ -56,7 +56,6 @@ BEGIN
       wait for 100 ns;
 	reset <= '0';		
 
-      wait for clk_period*10;
 
       -- insert stimulus here 
 

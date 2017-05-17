@@ -24,7 +24,7 @@ signal myReg : reg := (others => x"00000000");
 
 begin
 
-process(rs1,rs2,rd,dwr, reset)
+process(rs1,rs2,rd,dwr, reset, wre)
 	begin 	
 		myReg(0) <= x"00000000";--garantiza g0
 		if reset = '0' then

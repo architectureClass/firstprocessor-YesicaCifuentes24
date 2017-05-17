@@ -16,7 +16,7 @@ architecture arq_ALU of ALU is
 --signal i : std_logic := '0';
 signal result : std_logic_vector (31 downto 0) := x"00000000";
 begin
-	process(CRs1, CRs2, ALUOP) begin
+	process(CRs1, CRs2, ALUOP, C) begin
 		case(ALUOp) is
 			when "000000" =>--AND
 				result <= CRs1 and CRs2;
