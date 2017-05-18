@@ -76,8 +76,10 @@ begin
 			when "011011" => -- jmpl
 				result <= CRs1 + CRs2;
 				
-			
-			
+			when "011101" => --st
+				result <= CRs1 + CRs2;
+			when "011100" => --ld
+				result <= CRs1 + CRs2;
 			
 			when others => 
 			result <= x"00000000";

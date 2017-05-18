@@ -36,7 +36,7 @@ begin
 			nRs1_Aux<=conv_std_logic_vector(conv_integer(rs1)-(conv_integer(cwp)*16), 6);
 		end if;
 		
-		if((rs1>=16 and rs1<=23) or (rs1>=8 and rs1<=15)) then--valores locales - valores de salida
+		if((rs1>=15 and rs1<=23) or (rs1>=8 and rs1<=15)) then--valores locales - valores de salida
 			nRs1_Aux<=conv_std_logic_vector(conv_integer(rs1)+(conv_integer(cwp)*16), 6);
 		end if;
 
@@ -48,7 +48,7 @@ begin
 			nRs2_Aux<=conv_std_logic_vector(conv_integer(rs2)-(conv_integer(cwp)*16), 6);
 		end if;
 		
-		if((rs2>=16 and rs2<=23) or (rs1>=8 and rs1<=15)) then--valores locales - valores de salida
+		if((rs2>=15 and rs2<=23) or (rs2>=8 and rs2<=15)) then--valores locales - valores de salida
 			nRs2_Aux<=conv_std_logic_vector(conv_integer(rs2)+(conv_integer(cwp)*16), 6);
 		end if;
 		
@@ -60,7 +60,7 @@ begin
 			nRd_Aux<=conv_std_logic_vector(conv_integer(rd)-(conv_integer(cwp)*16), 6);
 		end if;
 		
-		if((rd>=16 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
+		if((rd>=15 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
 			nRd_Aux<=conv_std_logic_vector(conv_integer(rd)+(conv_integer(cwp)*16), 6);
 		end if;
 		
@@ -72,7 +72,7 @@ begin
 						nRd_Aux<=conv_std_logic_vector(conv_integer(rd)-(conv_integer(cwp-1)*16), 6);
 					end if;
 					
-					if((rd>=16 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
+					if((rd>=15 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
 						nRd_Aux<=conv_std_logic_vector(conv_integer(rd)+(conv_integer(cwp-1)*16), 6);
 					end if;
 				end if;
@@ -84,7 +84,7 @@ begin
 						nRd_Aux<=conv_std_logic_vector(conv_integer(rd)-(conv_integer(cwp+1)*16), 6);
 					end if;
 					
-					if((rd>=16 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
+					if((rd>=15 and rd<=23) or (rd>=8 and rd<=15)) then--valores locales - valores de salida
 						nRd_Aux<=conv_std_logic_vector(conv_integer(rd)+(conv_integer(cwp+1)*16), 6);
 					end if;
 				end if;

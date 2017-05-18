@@ -60,6 +60,7 @@ begin
 				WRENMEM_Aux <= '0';
 				wre_Aux <= '0';
 				PCSC_Aux <="00";-- NO HACE EL BRANCH
+				RFDEST_Aux <= '0';
 				if(op3(5 downto 3)="010") then
 				
 					case(cond) is

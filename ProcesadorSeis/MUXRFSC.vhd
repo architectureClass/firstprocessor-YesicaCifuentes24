@@ -13,7 +13,7 @@ entity MUXRFSC is
 end MUXRFSC;
 
 architecture arq_MUXRFSC of MUXRFSC is
-
+--signal DWR_Aux : std_logic_vector(31 downto 0) := 
 begin
 	process (DataMem,AluResult,PC,RFSC) begin
 		case (RFSC) is 

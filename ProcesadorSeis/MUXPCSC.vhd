@@ -21,19 +21,19 @@ process (CALL,BRANCH,nPC,JUMP,PCSC) begin
 	
 	case (PCSC) is 
 		when "10" => 
-		nPCOut_Aux <= CALL;
+		nPCOut <= CALL;
 		when "11" =>
-		nPCOut_Aux <= BRANCH;
+		nPCOut <= BRANCH;
 		when "00" =>
-		nPCOut_Aux <= nPC;
+		nPCOut <= nPC;
 		when "01" =>
-		nPCOut_Aux <= JUMP;
+		nPCOut <= JUMP;
 		when others => 
-			nPCOut_Aux <= nPC;
+			nPCOut <= nPC;
 	end case;
 	
 end process;
-nPCOut <= nPCOut_Aux;
+--nPCOut <= nPCOut_Aux;
 
 end arq_MUXPCSC;
 

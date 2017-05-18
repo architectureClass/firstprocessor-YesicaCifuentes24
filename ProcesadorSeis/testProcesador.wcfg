@@ -15,7 +15,16 @@
          </top_modules>
       </db_ref>
    </db_ref_list>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="25" />
+   <wave_markers>
+      <marker time="185000000" label="" />
+      <marker time="615000000" label="" />
+      <marker time="755000000" label="" />
+      <marker time="3135000000" label="" />
+      <marker time="2905000000" label="" />
+      <marker time="23745000000" label="" />
+      <marker time="23855000000" label="" />
+   </wave_markers>
    <wvobject fp_name="/procesadorseis_tb/clk" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -29,131 +38,288 @@
       <obj_property name="ObjectShortName">result[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ProgramCounter0/dataout" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">dataout[31:0]</obj_property>
-      <obj_property name="ObjectShortName">dataout[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/InstructionMemory0/address" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">address[31:0]</obj_property>
+      <obj_property name="ObjectShortName">address[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/call" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">call[31:0]</obj_property>
-      <obj_property name="ObjectShortName">call[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/InstructionMemory0/rst" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">rst</obj_property>
+      <obj_property name="ObjectShortName">rst</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/InstructionMemory0/instruction" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/InstructionMemory0/myinstructions" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">myinstructions[0:101]</obj_property>
+      <obj_property name="ObjectShortName">myinstructions[0:101]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/branch" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">branch[31:0]</obj_property>
-      <obj_property name="ObjectShortName">branch[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/InstructionMemory0/instruction_aux" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">instruction_aux[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_aux[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">npc[31:0]</obj_property>
-      <obj_property name="ObjectShortName">npc[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/rs1" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rs1[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rs1[5:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/jump" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">jump[31:0]</obj_property>
-      <obj_property name="ObjectShortName">jump[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/rs2" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rs2[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2[5:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/pcsc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">pcsc[1:0]</obj_property>
-      <obj_property name="ObjectShortName">pcsc[1:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/rd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">rd[5:0]</obj_property>
+      <obj_property name="ObjectShortName">rd[5:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npcout" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">npcout[31:0]</obj_property>
-      <obj_property name="ObjectShortName">npcout[31:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/dwr" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">dwr[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dwr[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/MUXPCSC0/npcout_aux" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">npcout_aux[31:0]</obj_property>
-      <obj_property name="ObjectShortName">npcout_aux[31:0]</obj_property>
-      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/crs1" type="array" db_ref_id="1">
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/wre" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">wre</obj_property>
+      <obj_property name="ObjectShortName">wre</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/crs1" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">crs1[31:0]</obj_property>
       <obj_property name="ObjectShortName">crs1[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/crs2" type="array" db_ref_id="1">
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/crs2" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">crs2[31:0]</obj_property>
       <obj_property name="ObjectShortName">crs2[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/c" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">c</obj_property>
-      <obj_property name="ObjectShortName">c</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/crd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">crd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">crd[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/aluop" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">aluop[5:0]</obj_property>
-      <obj_property name="ObjectShortName">aluop[5:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">myreg[0:40]</obj_property>
+      <obj_property name="ObjectShortName">myreg[0:40]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[0]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[0]</obj_property>
+         <obj_property name="ObjectShortName">myreg[0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[1]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[1]</obj_property>
+         <obj_property name="ObjectShortName">myreg[1]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[2]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[2]</obj_property>
+         <obj_property name="ObjectShortName">myreg[2]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[3]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[3]</obj_property>
+         <obj_property name="ObjectShortName">myreg[3]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[4]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[4]</obj_property>
+         <obj_property name="ObjectShortName">myreg[4]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[5]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[5]</obj_property>
+         <obj_property name="ObjectShortName">myreg[5]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[6]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[6]</obj_property>
+         <obj_property name="ObjectShortName">myreg[6]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[7]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[7]</obj_property>
+         <obj_property name="ObjectShortName">myreg[7]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[8]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[8]</obj_property>
+         <obj_property name="ObjectShortName">myreg[8]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[9]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[9]</obj_property>
+         <obj_property name="ObjectShortName">myreg[9]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[10]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[10]</obj_property>
+         <obj_property name="ObjectShortName">myreg[10]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[11]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[11]</obj_property>
+         <obj_property name="ObjectShortName">myreg[11]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[12]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[12]</obj_property>
+         <obj_property name="ObjectShortName">myreg[12]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[13]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[13]</obj_property>
+         <obj_property name="ObjectShortName">myreg[13]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[14]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[14]</obj_property>
+         <obj_property name="ObjectShortName">myreg[14]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[15]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[15]</obj_property>
+         <obj_property name="ObjectShortName">myreg[15]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[16]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[16]</obj_property>
+         <obj_property name="ObjectShortName">myreg[16]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[17]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[17]</obj_property>
+         <obj_property name="ObjectShortName">myreg[17]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[18]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[18]</obj_property>
+         <obj_property name="ObjectShortName">myreg[18]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[19]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[19]</obj_property>
+         <obj_property name="ObjectShortName">myreg[19]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[20]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[20]</obj_property>
+         <obj_property name="ObjectShortName">myreg[20]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[21]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[21]</obj_property>
+         <obj_property name="ObjectShortName">myreg[21]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[22]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[22]</obj_property>
+         <obj_property name="ObjectShortName">myreg[22]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[23]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[23]</obj_property>
+         <obj_property name="ObjectShortName">myreg[23]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[24]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[24]</obj_property>
+         <obj_property name="ObjectShortName">myreg[24]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[25]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[25]</obj_property>
+         <obj_property name="ObjectShortName">myreg[25]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[26]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[26]</obj_property>
+         <obj_property name="ObjectShortName">myreg[26]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[27]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[27]</obj_property>
+         <obj_property name="ObjectShortName">myreg[27]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[28]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[28]</obj_property>
+         <obj_property name="ObjectShortName">myreg[28]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[29]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[29]</obj_property>
+         <obj_property name="ObjectShortName">myreg[29]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[30]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[30]</obj_property>
+         <obj_property name="ObjectShortName">myreg[30]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[31]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[31]</obj_property>
+         <obj_property name="ObjectShortName">myreg[31]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[32]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[32]</obj_property>
+         <obj_property name="ObjectShortName">myreg[32]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[33]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[33]</obj_property>
+         <obj_property name="ObjectShortName">myreg[33]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[34]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[34]</obj_property>
+         <obj_property name="ObjectShortName">myreg[34]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[35]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[35]</obj_property>
+         <obj_property name="ObjectShortName">myreg[35]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[36]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[36]</obj_property>
+         <obj_property name="ObjectShortName">myreg[36]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[37]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[37]</obj_property>
+         <obj_property name="ObjectShortName">myreg[37]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[38]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[38]</obj_property>
+         <obj_property name="ObjectShortName">myreg[38]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[39]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[39]</obj_property>
+         <obj_property name="ObjectShortName">myreg[39]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/procesadorseis_tb/uut/RF0/myreg[40]" type="array" db_ref_id="1">
+         <obj_property name="ElementShortName">[40]</obj_property>
+         <obj_property name="ObjectShortName">myreg[40]</obj_property>
+      </wvobject>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ALU0/aluresult" type="array" db_ref_id="1">
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/crd" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">crd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">crd[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/aluresult" type="array" db_ref_id="1">
       <obj_property name="ElementShortName">aluresult[31:0]</obj_property>
       <obj_property name="ObjectShortName">aluresult[31:0]</obj_property>
       <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/op" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">op[1:0]</obj_property>
-      <obj_property name="ObjectShortName">op[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/op3" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">op3[5:0]</obj_property>
-      <obj_property name="ObjectShortName">op3[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/icc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">icc[3:0]</obj_property>
-      <obj_property name="ObjectShortName">icc[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/cond" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">cond[3:0]</obj_property>
-      <obj_property name="ObjectShortName">cond[3:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/aluop" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">aluop[5:0]</obj_property>
-      <obj_property name="ObjectShortName">aluop[5:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfdest" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rfdest</obj_property>
-      <obj_property name="ObjectShortName">rfdest</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfsc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rfsc[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rfsc[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wrenmem" type="logic" db_ref_id="1">
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/wrenmem" type="logic" db_ref_id="1">
       <obj_property name="ElementShortName">wrenmem</obj_property>
       <obj_property name="ObjectShortName">wrenmem</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wre" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">wre</obj_property>
-      <obj_property name="ObjectShortName">wre</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/reset" type="logic" db_ref_id="1">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/pcsc" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">pcsc[1:0]</obj_property>
-      <obj_property name="ObjectShortName">pcsc[1:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/datamem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">datamem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">datamem[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/result" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">result[5:0]</obj_property>
-      <obj_property name="ObjectShortName">result[5:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/myreg" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">myreg[0:519]</obj_property>
+      <obj_property name="ObjectShortName">myreg[0:519]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wrenmem_aux" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">wrenmem_aux</obj_property>
-      <obj_property name="ObjectShortName">wrenmem_aux</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/wre_aux" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">wre_aux</obj_property>
-      <obj_property name="ObjectShortName">wre_aux</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/pcsc_aux" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">pcsc_aux[1:0]</obj_property>
-      <obj_property name="ObjectShortName">pcsc_aux[1:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfdest_aux" type="logic" db_ref_id="1">
-      <obj_property name="ElementShortName">rfdest_aux</obj_property>
-      <obj_property name="ObjectShortName">rfdest_aux</obj_property>
-   </wvobject>
-   <wvobject fp_name="/procesadorseis_tb/uut/ControlUnit0/rfsc_aux" type="array" db_ref_id="1">
-      <obj_property name="ElementShortName">rfsc_aux[1:0]</obj_property>
-      <obj_property name="ObjectShortName">rfsc_aux[1:0]</obj_property>
+   <wvobject fp_name="/procesadorseis_tb/uut/DataMemory0/aux_datamem" type="array" db_ref_id="1">
+      <obj_property name="ElementShortName">aux_datamem[31:0]</obj_property>
+      <obj_property name="ObjectShortName">aux_datamem[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
 </wave_config>

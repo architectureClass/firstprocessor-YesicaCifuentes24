@@ -20,7 +20,7 @@ process(CLK, rst, Data) begin
 	if(rst = '1') then 
 		DataValue <= (others => '0');
 	elsif(rising_edge(CLK)) then
-		if(Data<85) then
+		if(Data<102) then
 			DataValue <= Data;
 		end if;
 	end if;

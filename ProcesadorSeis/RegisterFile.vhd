@@ -18,10 +18,9 @@ end RF;
 
 architecture arq_RF of RF is
 
-type reg is array (0 to 519) of std_logic_vector (31 downto 0);
+type reg is array (0 to 40) of std_logic_vector (31 downto 0);
 
 signal myReg : reg := (others => x"00000000");
-
 begin
 
 process(rs1,rs2,rd,dwr, reset, wre)

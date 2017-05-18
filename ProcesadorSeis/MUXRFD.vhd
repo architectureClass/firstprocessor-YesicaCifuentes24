@@ -11,20 +11,22 @@ entity MUXRFD is
 end MUXRFD;
 
 architecture Behavioral of MUXRFD is
-
+signal nRD_Aux : STD_LOGIC_VECTOR (5 downto 0) := "000000";
 begin
 	process (Rd,O7,RFDEST) begin
 		
 		case (RFDEST) is 
 		when '0' => 
-		nRD <= Rd;
+		nRD_Aux <= Rd;
 		when '1' =>
-		nRD <= O7;
+		nRD_Aux <= O7;
 		when others => 
-			nRD <= Rd;
+			nRD_Aux <= Rd;
 	end case;
 	
 end process;
+
+nRD <= nRD_Aux;
 
 end Behavioral;
 
