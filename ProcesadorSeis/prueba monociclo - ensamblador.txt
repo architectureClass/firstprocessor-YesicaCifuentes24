@@ -1,0 +1,102 @@
+BA, Main
+NOP
+mov 0, %O0 -- #multiplicacion: %i0, %i1
+mov 0, %l6
+cmp %l6, %i1 -- #while-multiplicacion
+BGE, fin while-multiplicacion
+NOP
+ADD %O0, %i0, %O1
+mov %O1, %O0
+ADD %l6, 1, %l7
+mov %l7, %l6
+BA, while-multiplicacion
+NOP
+Jmpl %O7, 1, %G0 -- #fin while-multiplicacion
+NOP
+mov 1, %O0 -- #potencia %i1, %i2
+mov 0, %l5
+mov %O7, %O6
+cmp %l5,%i2 -- #while-potencia
+BGE, fin while-potencia
+NOP
+mov %O0, %i0
+NOP
+CALL multiplicacion -- llamado a función
+NOP
+ADD %l5, 1, %l7
+mov %l7, %l5
+BA, while-potencia
+NOP
+Jmpl %O6, 1, %G0 -- #fin while-potencia
+NOP
+mov 10, %O2 -- #polinomio %i3, %i4
+mov 0, %l4
+mov %O7, %O5
+ADD %l4, 0, %G0
+st %O2, %l4, 0
+NOP
+ADD %l4, 1, %l7
+mov %l7, %l4
+cmp %l4, %i3 -- #while-construyePolinomio
+BG, fin while-construyePolinomio
+NOP
+mov %O2, %i0
+mov %l4, %i1
+NOP
+CALL multiplicacion -- llamado a función
+NOP
+ADD %l4, 0, %G0
+st %O0, %l4, 0 -- %O0 resultado de multiplicacion
+NOP
+SUB %O2, 1, %O3
+mov %O3, %O2
+ADD %l4, 1, %l7
+mov %l7, %l4
+BA while-construyePolinomio
+NOP
+mov 0, %l4 -- #fin while-construyePolinomio
+mov 0, %l7
+ADD %l4, 0, %G0
+ld %l4, 0, %O2
+NOP
+cmp %l4, %i3 -- #while operaPolinomio
+BG, fin while operaPolinomio
+NOP
+mov %i4, %i1
+mov %l4, %i2
+NOP
+CALL potencia -- llamado a función
+NOP
+mov %O0, %i1
+ADD %l4, 0, %G0
+ld %l4, 0, %i0
+NOP
+CALL multiplicacion -- llamado a función
+NOP
+ADD %O2, %O0, %l7
+mov %l7, %O2
+ADD %l4, 1, %l7
+mov %l7, %l4
+BA, while operaPolinomio
+NOP
+NOP
+jmpl %O5, 1, %G0 -- #fin while operaPolinomio
+NOP
+mov 3, %l0 -- #main
+mov 5, %l1
+mov %l0, %i0
+mov %l1, %i1
+NOP
+CALL multiplicacion
+NOP
+mov %l0, %i1
+mov %l1, %i2
+NOP
+CALL potencia
+NOP
+mov %l0, %i3
+mov %l1, %i4
+NOP
+CALL polinomio
+NOP
+NOP
